@@ -1,0 +1,20 @@
+[tool.uv.workspace]
+members = ["core", "providers/*"]
+
+# Dev-local resolution of workspace members; stripped from published wheels.
+[tool.uv.sources]
+crewai-memory-core = { workspace = true }
+crewai-memory-dynamodb = { workspace = true }
+crewai-memory-cosmosdb = { workspace = true }
+crewai-memory-postgres = { workspace = true }
+crewai-memory-firestore = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio",
+    "crewai>=1.10.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

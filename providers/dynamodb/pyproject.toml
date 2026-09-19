@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crewai-memory-dynamodb"
+version = "0.1.0"
+description = "Amazon DynamoDB StorageBackend for CrewAI unified Memory — hierarchical scopes, categories, metadata filters and native vector search (SearchVectors)"
+authors = [{name = "Kamal", email = "skamalj@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "crewai-memory-core>=0.1.0",
+    "boto3>=1.43.78",
+]
+keywords = ["crewai", "memory", "storage-backend", "dynamodb", "aws", "long-term-memory", "agent-memory", "vector-search"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/skamalj/crewai-memory"
+Repository = "https://github.com/skamalj/crewai-memory.git"
+Documentation = "https://skamalj.github.io/agentstate-reducer/"
+
+[dependency-groups]
+dev = ["pytest>=7.0", "pytest-asyncio"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/crewai_memory_dynamodb"]

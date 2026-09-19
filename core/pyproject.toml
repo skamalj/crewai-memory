@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crewai-memory-core"
+version = "0.1.0"
+description = "Shared core for CrewAI unified-memory StorageBackend implementations — build a Memory backend with five small primitives"
+authors = [{name = "Kamal", email = "skamalj@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "crewai>=1.10.0",
+]
+keywords = ["crewai", "memory", "storage-backend", "long-term-memory", "agent-memory", "vector-search"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/skamalj/crewai-memory"
+Repository = "https://github.com/skamalj/crewai-memory.git"
+Documentation = "https://skamalj.github.io/agentstate-reducer/"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/crewai_memory_core"]
