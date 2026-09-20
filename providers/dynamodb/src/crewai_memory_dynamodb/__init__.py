@@ -203,7 +203,7 @@ class DynamoDBMemoryBackend(MemoryBackend):
                 TableName=self.table_name,
                 IndexName=self._index_name,
                 SearchVector=qv,
-                TopK=int(limit),
+                TopK=max(1, min(100, int(limit))),   # SearchVectors accepts TopK in [1, 100]
                 SearchConditionExpression="#pk = :s",
                 ExpressionAttributeNames={"#pk": "PK"},
                 ExpressionAttributeValues={":s": {"S": sc}},

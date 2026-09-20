@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "crewai-memory-dynamodb"
-version = "0.1.0"
+version = "0.1.1"
 description = "Amazon DynamoDB StorageBackend for CrewAI unified Memory — hierarchical scopes, categories, metadata filters and native vector search (SearchVectors)"
 authors = [{name = "Kamal", email = "skamalj@gmail.com"}]
 readme = "README.md"
